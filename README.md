@@ -1,11 +1,11 @@
 # :package_name
 
-[![Latest Version](https://img.shields.io/github/release/thephpleague/:package_name.svg?style=flat-square)](https://github.com/thephpleague/:package_name/releases)
+[![Latest Version](https://img.shields.io/github/release/:vendor_name/:package_name.svg?style=flat-square)](https://github.com/:vendor_name/:package_name/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/thephpleague/:package_name/master.svg?style=flat-square)](https://travis-ci.org/thephpleague/:package_name)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/thephpleague/:package_name.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/:package_name/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/thephpleague/:package_name.svg?style=flat-square)](https://scrutinizer-ci.com/g/thephpleague/:package_name)
-[![Total Downloads](https://img.shields.io/packagist/dt/league/:package_name.svg?style=flat-square)](https://packagist.org/packages/league/:package_name)
+[![Build Status](https://img.shields.io/travis/:vendor_name/:package_name/master.svg?style=flat-square)](https://travis-ci.org/:vendor_name/:package_name)
+[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/:vendor_name/:package_name.svg?style=flat-square)](https://scrutinizer-ci.com/g/:vendor_name/:package_name/code-structure)
+[![Quality Score](https://img.shields.io/scrutinizer/g/:vendor_name/:package_name.svg?style=flat-square)](https://scrutinizer-ci.com/g/:vendor_name/:package_name)
+[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_name/:package_name.svg?style=flat-square)](https://packagist.org/packages/:vendor_name/:package_name)
 
 **Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line.
 
@@ -17,14 +17,14 @@ PSRs you support to avoid any confusion with users and contributors.
 Via Composer
 
 ``` bash
-$ composer require league/:package_name
+$ composer require :vendor_name/:package_name
 ```
 
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+$:package_name = new :VendorName\:PackageName();
+echo $:package_name->echoPhrase('Hello, :VendorName!');
 ```
 
 ## Testing

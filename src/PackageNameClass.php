@@ -1,8 +1,8 @@
 <?php
 
-namespace League\Skeleton;
+namespace :VendorName\:PackageName;
 
-class SkeletonClass
+class :PackageName
 {
 
     /**

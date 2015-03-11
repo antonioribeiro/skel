@@ -1,6 +1,4 @@
-# Laravel Stats SDK
-
-## Changelog
+# Changelog
 
 ### 0.1.0
 

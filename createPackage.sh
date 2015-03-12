@@ -229,7 +229,12 @@ function askForData()
     fi
 
     if [[ "$repository" == "" ]]; then
-        SKELETON_REPOSITORY=https://$SKELETON_VCS_SERVICE/$SKELETON_VENDOR_NAME/skeleton.git
+        repo=$SKELETON_VENDOR_NAME/skeleton.git
+        if [[ "$SKELETON_VENDOR_NAME" == ":vendor_name" ]]; then
+            repo=
+        fi
+
+        SKELETON_REPOSITORY=https://$SKELETON_VCS_SERVICE/$repo
         inquireText "Skeleton repository link:" $SKELETON_REPOSITORY
         SKELETON_REPOSITORY=$answer
 

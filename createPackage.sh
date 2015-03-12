@@ -63,7 +63,7 @@ function searchAndReplace()
 
 function createPackage()
 {
-    message Creating package $SKELETON_VENDOR_NAME/$SKELETON_PACKAGE_NAME
+    message Creating package $VENDOR_NAME/$PACKAGE_NAME
     message From repository: $SKELETON_REPOSITORY branch $SKELETON_PACKAGE_BRANCH
 
     git clone --branch $SKELETON_PACKAGE_BRANCH $SKELETON_REPOSITORY $DESTINATION_FOLDER

@@ -1,7 +1,7 @@
 # Composer Package Creator & Skeleton
 ### A Bash script to create skeleton based composer packages
 
-The script will basically ask for some information (destination, vendor, package, vcs username...) clone a skeleton repositoy, replaces everything related to the package with the information the user provides and push it to your VCS (Github, Bitbucket...).
+The script will basically ask for some information (destination, vendor, package, vcs username, skeleton to be used...) clone a skeleton repositoy, replaces everything related to the package with the information the user provides and push it to your VCS (Github, Bitbucket...).
 
 #### Running it remotely from Github
 

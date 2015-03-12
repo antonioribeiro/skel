@@ -243,7 +243,7 @@ function selectSkeletonRepository()
     repository=https://github.com/antonioribeiro/skeleton.git
 
     PS3='Please enter your choice: '
-    options=("League" "Laravel 5" "Laravel 4" "PragmRX")
+    options=("League" "Laravel 5" "Laravel 4" "PragmRX" "Use your own skeleton")
     select opt in "${options[@]}"
     do
         case $opt in

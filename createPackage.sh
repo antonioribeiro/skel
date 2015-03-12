@@ -3,6 +3,12 @@
 # Export those variables in your .bashrc to ease the deployment of new packages
 #
 # export VENDOR_NAME=pragmarx
+# export PACKAGE_AUTHOR_NAME=Antonio Carlos Ribeiro
+# export PACKAGE_AUTHOR_EMAIL=acr@antoniocarlosribeiro.com
+# export PACKAGE_AUTHOR_WEBSITE=https://antoniocarlosribeiro.com
+# export PACKAGE_AUTHOR_USERNAME=antonioribeiro
+# export PACKAGE_DESCRIPTION=
+#
 # export SKELETON_VENDOR_NAME=pragmarx
 # export SKELETON_VENDOR_NAME_CAPITAL=PragmaRX
 # export SKELETON_PACKAGE_NAME=skeleton
@@ -68,10 +74,15 @@ function createPackage()
 
     git clone --branch $SKELETON_PACKAGE_BRANCH $SKELETON_REPOSITORY $DESTINATION_FOLDER
 
-    searchAndReplace $DESTINATION_FOLDER $SKELETON_PACKAGE_NAME                 $PACKAGE_NAME
-    searchAndReplace $DESTINATION_FOLDER $SKELETON_PACKAGE_NAME_CAPITAL         $PACKAGE_NAME_CAPITAL
-    searchAndReplace $DESTINATION_FOLDER $SKELETON_VENDOR_NAME          $VENDOR_NAME           
-    searchAndReplace $DESTINATION_FOLDER $SKELETON_VENDOR_NAME_CAPITAL  $VENDOR_NAME_CAPITAL   
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_PACKAGE_NAME             $PACKAGE_NAME
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_PACKAGE_NAME_CAPITAL     $PACKAGE_NAME_CAPITAL
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_VENDOR_NAME              $VENDOR_NAME
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_VENDOR_NAME_CAPITAL      $VENDOR_NAME_CAPITAL
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_AUTHOR_NAME              $PACKAGE_AUTHOR_NAME
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_AUTHOR_EMAIL             $PACKAGE_AUTHOR_EMAIL
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_AUTHOR_WEBSITE           $PACKAGE_AUTHOR_WEBSITE
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_AUTHOR_USERNAME          $PACKAGE_AUTHOR_USERNAME
+    searchAndReplace $DESTINATION_FOLDER $SKELETON_DESCRIPTION              $PACKAGE_DESCRIPTION
 
     renameAll $DESTINATION_FOLDER $SKELETON_PACKAGE_NAME                 $PACKAGE_NAME
     renameAll $DESTINATION_FOLDER $SKELETON_PACKAGE_NAME_CAPITAL         $PACKAGE_NAME_CAPITAL
@@ -135,6 +146,24 @@ function askForData()
         VCS_USER=$VENDOR_NAME
     fi
 
+    if [[ "$PACKAGE_AUTHOR_NAME" == "" ]]; then
+        PACKAGE_AUTHOR_NAME=$VENDOR_NAME_CAPITAL
+    fi
+    inquireText "Author name:" $VENDOR_NAME_CAPITAL
+    PACKAGE_AUTHOR_NAME=$answer
+
+    inquireText "Author email:" $PACKAGE_AUTHOR_EMAIL
+    PACKAGE_AUTHOR_EMAIL=$answer
+
+    inquireText "Author website:" $PACKAGE_AUTHOR_WEBSITE
+    PACKAGE_AUTHOR_WEBSITE=$answer
+
+    inquireText "Author username:" $VCS_USER
+    PACKAGE_AUTHOR_USERNAME=$answer
+
+    inquireText "Description:" $PACKAGE_DESCRIPTION
+    PACKAGE_DESCRIPTION=$answer
+
     inquireText "Your VCS username:" $VCS_USER
     VCS_USER=$answer
 
@@ -164,7 +193,7 @@ function askForData()
     inquireText "Skeleton package name (lowercase):" $SKELETON_PACKAGE_NAME
     SKELETON_PACKAGE_NAME=$answer
 
-    if [[ "$SKELETON_PACKAGE_NAME_CAPITAL" != ":package_name" ]]; then
+    if [[ "$SKELETON_PACKAGE_NAME_CAPITAL" != ":PackageName" ]]; then
         SKELETON_PACKAGE_NAME_CAPITAL=$SKELETON_PACKAGE_NAME
     fi
 
@@ -172,7 +201,22 @@ function askForData()
     inquireText "Skeleton package name (Capitalized):" $SKELETON_PACKAGE_NAME_CAPITAL
     SKELETON_PACKAGE_NAME_CAPITAL=$answer
 
-    if [[ "$SKELETON_PACKAGE_NAME_CAPITAL" == ":package_name" ]]; then
+    inquireText "Skeleton author name:" :author_name
+    SKELETON_AUTHOR_NAME=$answer
+
+    inquireText "Skeleton author email:" :author_email
+    SKELETON_AUTHOR_EMAIL=$answer
+
+    inquireText "Skeleton author website:" :author_website
+    SKELETON_AUTHOR_WEBSITE=$answer
+
+    inquireText "Skeleton author username:" :author_username
+    SKELETON_AUTHOR_USERNAME=$answer
+
+    inquireText "Skeleton package description:" :package_description
+    SKELETON_DESCRIPTION=$answer
+
+    if [[ "$SKELETON_PACKAGE_NAME_CAPITAL" == ":PackageName" ]]; then
         selectSkeletonRepository
 
         SKELETON_REPOSITORY=$repository

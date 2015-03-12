@@ -262,6 +262,11 @@ function selectSkeletonRepository()
                 branch=pragmarx
                 break
                 ;;
+            "Use your own skeleton")
+                repository=
+                branch=
+                break
+                ;;
             *) echo invalid option;;
         esac
     done

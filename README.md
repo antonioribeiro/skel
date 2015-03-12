@@ -5,13 +5,13 @@ The script will basically ask for some information (destination, vendor, package
 
 #### Running it remotely from Github
 
-```
+``` bash
 bash <(curl -s https://raw.githubusercontent.com/antonioribeiro/skeleton/v0.1.0/createPackage.sh)
 ```
 
 #### Installing the script on your system
 
-```
+``` bash
 DESTINATION=/usr/local/bin/createPackage.sh
 sudo wget https://raw.githubusercontent.com/antonioribeiro/skeleton/v0.1.0/createPackage.sh -v -O $DESTINATION
 sudo chmod +x $DESTINATION 

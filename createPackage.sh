@@ -120,7 +120,7 @@ function askForData()
         exit 1
     fi
 
-    message 
+    message
 
     VENDOR_NAME=`echo $VENDOR_NAME | awk '{print tolower($0)}'`
     inquireText "Vendor name for your new package (lowercase):" $VENDOR_NAME
@@ -130,7 +130,18 @@ function askForData()
     inquireText "Vendor name for your new package (Capitalized):" $VENDOR_NAME_CAPITAL
     VENDOR_NAME_CAPITAL=$answer
 
-    message 
+    message
+
+    if [[ "$SKELETON_VCS_USER" != "" ]]; then
+        VCS_USER=$SKELETON_VCS_USER
+    else
+        VCS_USER=$VENDOR_NAME
+    fi
+
+    inquireText "Your VCS username:" $VCS_USER
+    VCS_USER=$answer
+
+    message
 
     PACKAGE_NAME=`echo $(basename $DESTINATION_FOLDER) | awk '{print tolower($0)}'`
     inquireText "Your new package name (lowercase):" $PACKAGE_NAME
@@ -139,12 +150,6 @@ function askForData()
     PACKAGE_NAME_CAPITAL=${PACKAGE_NAME^}
     inquireText "Your new package name (Capitalized):" $PACKAGE_NAME_CAPITAL
     PACKAGE_NAME_CAPITAL=$answer
-
-    if [[ "$SKELETON_VCS_USER" != "" ]]; then
-        VCS_USER=$SKELETON_VCS_USER
-    else
-        VCS_USER=$VENDOR_NAME
-    fi
 
     if [[ "$PACKAGE_AUTHOR_NAME" == "" ]]; then
         PACKAGE_AUTHOR_NAME=$VENDOR_NAME_CAPITAL
@@ -163,9 +168,6 @@ function askForData()
 
     inquireText "Description:" $PACKAGE_DESCRIPTION
     PACKAGE_DESCRIPTION=$answer
-
-    inquireText "Your VCS username:" $VCS_USER
-    VCS_USER=$answer
 
     PACKAGE_REPOSITORY=https://$SKELETON_VCS_SERVICE/$VCS_USER/$PACKAGE_NAME.git
     inquireText "Your new package repository link (create a package first or leave it blank):" $PACKAGE_REPOSITORY
@@ -326,8 +328,13 @@ function inquireText()  {
 function displayInstructions()
 {
     echo
+    echo Congratulations, your new package has been created!
     echo
-    echo "Now open one of your applications composer.json and add those items to their proper sections:"
+    echo ------------------------------------------------------------------------------------------------
+    echo  How to use it
+    echo ------------------------------------------------------------------------------------------------
+    echo
+    echo "Add the items below to your composer.json:"
     echo 
     echo "\"require\": {"
     echo "    \"$VENDOR_NAME/$PACKAGE_NAME\": \"dev-master\","
@@ -347,7 +354,7 @@ function displayInstructions()
     echo 
     echo "If this is a Laravel project, don't forget to add a ServiceProvider in your app/config/app.php too, something like:"
     echo 
-    echo "    '$VENDOR_NAME_CAPITAL\\$PACKAGE_NAME_CAPITAL\\Vendor\\Laravel\\ServiceProvider'",
+    echo "    '$VENDOR_NAME_CAPITAL\\$PACKAGE_NAME_CAPITAL\\ServiceProvider'",
     echo 
     echo 
 }

@@ -74,7 +74,7 @@ All skeletons on this repository are currently using as a base [ThePhpLeague/Ske
 
 #### Going Faster
 
-You can export some variables so you don't have to type too much while creating your packages, you just have to add those lines to your .bashrc and fill it properly: 
+You can export some variables so you don't have to type too much while creating your packages, you just have to add those lines to your .bashrc and fill them properly: 
  
 ``` bash
 export VENDOR_NAME=pragmarx

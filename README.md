@@ -1,19 +1,50 @@
-# Composer Package Creator & Skeleton
-### A Bash script to create skeleton based composer packages
+# Skel
+### A PHP Package Creator & Skeleton
 
+A Bash script to create skeleton based composer packages
 The script will basically ask for some information (destination, vendor, package, vcs username, skeleton to be used...) clone a skeleton repositoy, replaces everything related to the package with the information the user provides and push it to your VCS (Github, Bitbucket...).
+
+### You Don't Need to Add Your Package to Packagist
+
+Skel will automatically push your new package to a VCS repository (Github, Bitbucket...), but you don't need to add it publicly to Packagist. You can require your new package on your composer.json:  
+
+``` json
+"require": {
+    "yourVendorName/yourNewPackage": "dev-master",
+},
+```
+
+And reference your VCS in the repositories object:  
+
+``` json
+"repositories": [
+    {
+        "type": "vcs",
+        "url":  "https://github.com/yourUsername/yourPackageName.git"
+    },
+],
+```
+
+Then you just have to tell Composer to install it:
+  
+  
+``` bash
+composer install
+```
+
+And it's done!
 
 #### Running it remotely from Github
 
 ``` bash
-bash <(curl -s https://raw.githubusercontent.com/antonioribeiro/skeleton/v0.1.0/createPackage.sh)
+bash <(curl -s https://raw.githubusercontent.com/antonioribeiro/skel/v0.1.0/skel.sh)
 ```
 
 #### Installing the script on your system
 
 ``` bash
-DESTINATION=/usr/local/bin/createPackage.sh
-sudo wget https://raw.githubusercontent.com/antonioribeiro/skeleton/v0.1.0/createPackage.sh -v -O $DESTINATION
+DESTINATION=/usr/local/bin/skel.sh
+sudo wget https://raw.githubusercontent.com/antonioribeiro/skel/v0.1.0/skel.sh -v -O $DESTINATION
 sudo chmod +x $DESTINATION 
 ```
 
@@ -32,3 +63,5 @@ All skeletons on this repository are currently using as a base [ThePhpLeague/Ske
   
 * Replacement strings (:package_name, :vendor_namem, etc.)
 * Framework specific repositories, for instance Laravel Service Providers, included in Laravel skeletons.
+
+#

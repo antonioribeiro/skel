@@ -15,7 +15,7 @@ set -e
 # export SKELETON_VENDOR_NAME_CAPITAL=PragmaRX
 # export SKELETON_PACKAGE_NAME=skeleton
 # export SKELETON_VENDOR_NAME_CAPITAL=Skeleton
-# export SKELETON_PACKAGE_REPOSITORY=https://github.com/antonioribeiro/skeleton.git
+# export SKELETON_PACKAGE_REPOSITORY=https://github.com/antonioribeiro/skel.git
 # export SKELETON_VCS_USER=antonioribeiro
 # export SKELETON_VCS_SERVICE=github.com
 # export SKELETON_PACKAGE_BRANCH=league
@@ -56,7 +56,7 @@ function generateDefaultData()
     fi
 
     if [[ "$SKELETON_PACKAGE_REPOSITORY" == "" ]]; then
-        SKELETON_PACKAGE_REPOSITORY=https://github.com/antonioribeiro/skeleton.git
+        SKELETON_PACKAGE_REPOSITORY=https://github.com/antonioribeiro/skel.git
     fi
 
     if [[ "$SKELETON_PACKAGE_BRANCH" == "" ]]; then
@@ -231,7 +231,7 @@ function askForData()
     fi
 
     if [[ "$repository" == "" ]]; then
-        repo="$SKELETON_VENDOR_NAME/skeleton.git"
+        repo="$SKELETON_VENDOR_NAME/skel.git"
         if [[ "$SKELETON_VENDOR_NAME" == ":vendor_name" ]]; then
             repo=
         fi
@@ -247,7 +247,7 @@ function askForData()
 
 function selectSkeletonRepository()
 {
-    repository=https://github.com/antonioribeiro/skeleton.git
+    repository=https://github.com/antonioribeiro/skel.git
 
     PS3='Please enter your choice: '
     options=("League" "Laravel 5" "Laravel 4" "PragmRX" "Use your own skeleton")

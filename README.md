@@ -1,7 +1,7 @@
 # Skel
 ### A PHP Package Creator & Skeleton
 
-Skel is a Bash script to create Composer PHP packages based on skeletons. 
+Skel is a Bash script to create [Composer](https://getcomposer.org/doc/01-basic-usage.md) PHP packages based on skeletons. 
 
 ### How it Works
 
@@ -23,7 +23,7 @@ Skel will automatically push your new package to a VCS repository (Github, Bitbu
 },
 ```
 
-And reference your VCS in the repositories object:  
+And [reference your VCS in the repositories](https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository) object:  
 
 ``` json
 "repositories": [
@@ -34,8 +34,9 @@ And reference your VCS in the repositories object:
 ],
 ```
 
-Then you just have to tell Composer to install by cloning it, allowing you to develop your package right from your app vendor folder:
- 
+Then you just have to tell [Composer](https://getcomposer.org/doc/01-basic-usage.md) to install by cloning it, allowing you to develop your package right from your app vendor folder:
+
+You can read more about this 
 ``` bash
 composer install --prefer-source
 ```

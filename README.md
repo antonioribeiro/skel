@@ -74,10 +74,10 @@ During creation of a package the script may ask for a skeleton to install, the c
 
 #### Skeleton Base
 
-All skeletons on this repository are currently using as a base [ThePhpLeague/Skeleton](https://github.com/thephpleague/skeleton), all packages are based on League's and every commit should be merged to ours. The differences between League's and this respository are:
+All skeletons on this repository are currently using as a base [ThePhpLeague/Skeleton](https://github.com/thephpleague/skeleton), all packages are based on League's and every commit to their repository will be merged to Skel. The differences between League's and this repository are:
   
 * Replacement strings (:package_name, :vendor_name, etc.)
-* Framework specific repositories, for instance Laravel Service Providers, included in Laravel skeletons.
+* Framework specific files, for instance the Service Provider, included in Laravel 4 and 5 skeletons.
 
 #### Going Faster
 

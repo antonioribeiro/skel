@@ -19,7 +19,7 @@ Skel will automatically push your new package to a VCS repository (Github, Bitbu
 
 ``` json
 "require": {
-    "yourVendorName/yourNewPackage": "dev-master",
+    "yourVendorName/yourPackageName": "dev-master",
 },
 ```
 

@@ -1,7 +1,7 @@
 # Skel
 ### A PHP Package Creator & Skeletons
 
-Skel is a Bash script to create [Composer](https://getcomposer.org/doc/01-basic-usage.md) PHP packages based on skeletons. 
+Skel is a Bash script to create [Composer](https://getcomposer.org/doc/01-basic-usage.md) PHP packages based on [skeletons](https://github.com/antonioribeiro/skel#skeletons). 
 
 ### How it Works
 
@@ -72,11 +72,11 @@ During creation of a package the script may ask for a skeleton to install, the c
 * [Laravel 4](https://github.com/antonioribeiro/skel/tree/laravel4)
 * Your own skeleton
 
-#### Skeleton Base
+#### [The League of Extraordinary Packages](http://thephpleague.com/) Skeleton
 
-All skeletons on this repository are currently using as a base [ThePhpLeague/Skeleton](https://github.com/thephpleague/skeleton), all packages are based on League's and every commit to their repository will be merged to Skel. The differences between League's and this repository are:
+All skeletons on this repository are using [ThePhpLeague/Skeleton](https://github.com/thephpleague/skeleton) a base, and every commit to League's repository will be merged to Skel, but there are some differences:
   
-* Replacement strings (:package_name, :vendor_name, etc.)
+* Replacement strings (:package_name, :vendor_name, etc.) were unified
 * Framework specific files, for instance the Service Provider, included in Laravel 4 and 5 skeletons.
 
 #### Going Faster

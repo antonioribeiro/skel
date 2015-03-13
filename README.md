@@ -72,7 +72,7 @@ During creation of a package the script may ask for a skeleton to install, the c
 * [Laravel 4](https://github.com/antonioribeiro/skel/tree/laravel4)
 * Your own skeleton
 
-#### [The League of Extraordinary Packages](http://thephpleague.com/) Skeleton
+#### [The League of Extraordinary Packages](http://thephpleague.com/)
 
 All skeletons on this repository are using [ThePhpLeague/Skeleton](https://github.com/thephpleague/skeleton) a base, and every commit to League's repository will be merged to Skel, but there are some differences:
   

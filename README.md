@@ -1,7 +1,17 @@
 # Skel
 ### A PHP Package Creator & Skeleton
 
-Skel is a Bash script to create skeleton based composer packages. It will, basically, ask for some information (destination, vendor, package, vcs username, skeleton to be used...) clone a skeleton repositoy, replaces everything related to the package with the information the user provides and push it to your VCS (Github, Bitbucket...).
+Skel is a Bash script to create Composer PHP packages based on skeletons. 
+
+### How it Works
+
+Skel is very simple, when running it will 
+
+1) Ask for some information (destination, vendor, package, vcs username, skeleton to be used...). 
+2) Clone a skeleton repositoy. 
+3) Replace everything related to the package with the information provided.
+4) Push the new package to your VCS (Github, Bitbucket...).
+5) Give you instructions on how to add the new package to your application.
 
 ### You Don't Need to Add Your Package to Packagist
 

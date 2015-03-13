@@ -1,5 +1,5 @@
 # Skel
-### A PHP Package Creator & Skeleton
+### A PHP Package Creator & Skeletons
 
 Skel is a Bash script to create [Composer](https://getcomposer.org/doc/01-basic-usage.md) PHP packages based on skeletons. 
 

@@ -341,36 +341,36 @@ function inquireText()
 
 function displayInstructions()
 {
-    echo
-    echo Congratulations, your new package has been created!
-    echo
-    echo ------------------------------------------------------------------------------------------------
-    echo  How to use it
-    echo ------------------------------------------------------------------------------------------------
-    echo
-    echo "Add the items below to your composer.json:"
-    echo 
-    echo "\"require\": {"
-    echo "    \"$VENDOR_NAME/$PACKAGE_NAME\": \"dev-master\","
-    echo "},"
-    echo 
-    echo 
-    echo "and"
-    echo 
-    echo 
-    echo "\"repositories\": ["
-    echo "    {"
-    echo "        \"type\": \"vcs\","
-    echo "        \"url\":  \"$PACKAGE_REPOSITORY\""
-    echo "    },"
-    echo "],"
-    echo
-    echo 
-    echo "If this is a Laravel project, don't forget to add a ServiceProvider in your app/config/app.php too, something like:"
-    echo 
-    echo "    '$VENDOR_NAME_CAPITAL\\$PACKAGE_NAME_CAPITAL\\ServiceProvider'",
-    echo 
-    echo 
+    message
+    message "Congratulations, your new package has been created!"
+    message
+    message "------------------------------------------------------------------------------------------------"
+    message " How to use it"
+    message "------------------------------------------------------------------------------------------------"
+    message
+    message "Add the items below to your composer.json:"
+    message
+    message "\"require\": {"
+    message "    \"$VENDOR_NAME/$PACKAGE_NAME\": \"dev-master\","
+    message "},"
+    message
+    message
+    message "and"
+    message
+    message
+    message "\"repositories\": ["
+    message "    {"
+    message "        \"type\": \"vcs\","
+    message "        \"url\":  \"$PACKAGE_REPOSITORY\""
+    message "    },"
+    message "],"
+    message
+    message
+    message "If this is a Laravel project, don't forget to add a ServiceProvider in your app/config/app.php too, something like:"
+    message
+    message "    '$VENDOR_NAME_CAPITAL\\$PACKAGE_NAME_CAPITAL\\ServiceProvider'",
+    message
+    message
 }
 
 function message()
@@ -385,9 +385,9 @@ function message()
 
 function displayAppName()
 {
-    echo "## createPackage"
-    echo
-    echo
+    message "## Skel"
+    message
+    message
 }
 
 main "$@"

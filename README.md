@@ -51,9 +51,15 @@ bash <(curl -s https://raw.githubusercontent.com/antonioribeiro/skel/v0.1.0/skel
 #### Installing the script on your system
 
 ``` bash
-DESTINATION=/usr/local/bin/skel.sh
+DESTINATION=/usr/local/bin/skel
 sudo wget https://raw.githubusercontent.com/antonioribeiro/skel/v0.1.0/skel.sh -v -O $DESTINATION
 sudo chmod +x $DESTINATION 
+```
+
+Then you just have to run it
+
+``` bash
+skel 
 ```
 
 #### Skeletons

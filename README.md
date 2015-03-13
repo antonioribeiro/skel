@@ -34,14 +34,13 @@ And reference your VCS in the repositories object:
 ],
 ```
 
-Then you just have to tell Composer to install it:
-  
-  
+Then you just have to tell Composer to install by cloning it, allowing you to develop your package right from your app vendor folder:
+ 
 ``` bash
 composer install --prefer-source
 ```
 
-And it's done! Your can now develop your package right from your application vendor folder. 
+And it's done! 
 
 #### Running Skel remotely from Github
 

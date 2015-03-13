@@ -1,8 +1,7 @@
 # Skel
 ### A PHP Package Creator & Skeleton
 
-A Bash script to create skeleton based composer packages
-The script will basically ask for some information (destination, vendor, package, vcs username, skeleton to be used...) clone a skeleton repositoy, replaces everything related to the package with the information the user provides and push it to your VCS (Github, Bitbucket...).
+Skel is a Bash script to create skeleton based composer packages. It will, basically, ask for some information (destination, vendor, package, vcs username, skeleton to be used...) clone a skeleton repositoy, replaces everything related to the package with the information the user provides and push it to your VCS (Github, Bitbucket...).
 
 ### You Don't Need to Add Your Package to Packagist
 
@@ -29,12 +28,12 @@ Then you just have to tell Composer to install it:
   
   
 ``` bash
-composer install
+composer install --prefer-source
 ```
 
-And it's done!
+And it's done! Your can now develop your package right from your application vendor folder. 
 
-#### Running it remotely from Github
+#### Running Skel remotely from Github
 
 ``` bash
 bash <(curl -s https://raw.githubusercontent.com/antonioribeiro/skel/v0.1.0/skel.sh)
@@ -52,16 +51,14 @@ sudo chmod +x $DESTINATION
 
 During creation of a package the script may ask for a skeleton to install, the currently available are:
 
-* League
-* Laravel 5
-* Laravel 4
+* [League](https://github.com/antonioribeiro/skel/tree/league)
+* [Laravel 5](https://github.com/antonioribeiro/skel/tree/laravel5)
+* [Laravel 4](https://github.com/antonioribeiro/skel/tree/laravel4)
 * Your own skeleton
 
 #### Skeleton Base
 
 All skeletons on this repository are currently using as a base [ThePhpLeague/Skeleton](https://github.com/thephpleague/skeleton), all packages are based on League's and every commit should be merged to ours. The differences between League's and this respository are:
   
-* Replacement strings (:package_name, :vendor_namem, etc.)
+* Replacement strings (:package_name, :vendor_name, etc.)
 * Framework specific repositories, for instance Laravel Service Providers, included in Laravel skeletons.
-
-#

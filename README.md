@@ -8,7 +8,7 @@ Skel is a Bash script to create Composer PHP packages based on skeletons.
 Skel is very simple, when running it will 
 
 1. Ask for some information (destination, vendor, package, vcs username, skeleton to be used...). 
-2. Clone a skeleton repositoy. 
+2. Clone a skeleton repository of your choice. 
 3. Replace everything related to the package with the information provided.
 4. Push the new package to your VCS (Github, Bitbucket...).
 5. Give you instructions on how to add the new package to your application.
@@ -72,3 +72,24 @@ All skeletons on this repository are currently using as a base [ThePhpLeague/Ske
   
 * Replacement strings (:package_name, :vendor_name, etc.)
 * Framework specific repositories, for instance Laravel Service Providers, included in Laravel skeletons.
+
+#### Going Faster
+
+You can export some variables so you don't have to type too much while creating your packages, you just have to add those lines to your .bashrc and fill it properly: 
+ 
+``` bash
+export VENDOR_NAME=pragmarx
+export PACKAGE_AUTHOR_NAME=Antonio Carlos Ribeiro
+export PACKAGE_AUTHOR_EMAIL=acr@antoniocarlosribeiro.com
+export PACKAGE_AUTHOR_WEBSITE=https://antoniocarlosribeiro.com
+export PACKAGE_AUTHOR_USERNAME=antonioribeiro
+export PACKAGE_DESCRIPTION=PragmaRX Package for...
+export SKELETON_VENDOR_NAME=pragmarx
+export SKELETON_VENDOR_NAME_CAPITAL=PragmaRX
+export SKELETON_PACKAGE_NAME=skeleton
+export SKELETON_VENDOR_NAME_CAPITAL=Skeleton
+export SKELETON_PACKAGE_REPOSITORY=https://github.com/antonioribeiro/skel.git
+export SKELETON_VCS_USER=antonioribeiro
+export SKELETON_VCS_SERVICE=github.com
+export SKELETON_PACKAGE_BRANCH=league
+```

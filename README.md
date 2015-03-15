@@ -5,7 +5,7 @@ Skel is a Bash script to create [Composer](https://getcomposer.org/doc/01-basic-
 
 ### Why?
 
-Laravel 4 Workbench is great, but, in my first steps with it I found easier to develop a package right from my vendor folder, where the package will really be after I install it using Composer. Also because my new packages needed some more preparing than just setting up files in folders, I needed more information in my composer.json, my package stub had more files than the ones Laravel provided, like readme.md, changelog.md and travis.yml, I also had more info in composer.json, so there was a lot of boilerplate to be added before I go my package really ready to go, thinks I could avoid with an skeleton.
+Laravel 4 Workbench is great, but, in my first steps with it I found easier to develop a package right from my vendor folder, where the package will really be after I install it using Composer. Also because my new packages needed some more preparing than just setting up files in folders, I needed more information in my composer.json, my package stub had more files than the ones Laravel provided, like readme.md, changelog.md and travis.yml, I also had more info in composer.json, so there was a lot of boilerplate to be added before I go my package really ready to go, things I could avoid using my own skeleton (stub).
    
 This script does all this for you, allowing you to use a skeleton repository to create the package and even upload a first draft of it to Github (or any other VCS service). 
  
